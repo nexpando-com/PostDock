@@ -5,7 +5,7 @@ echo '>>> SETTING UP POLYMORPHIC VARIABLES (repmgr=3+postgres=9 | repmgr=4, post
 source postdock_polymorphic
 PG_HOME=$(eval echo ~postgres)
 echo '>>> TUNING UP POSTGRES...'
-echo "*:$CURRENT_REPLICATION_PRIMARY_PORT:*:$REPLICATION_USER:$REPLICATION_PASSWORD" >> $PG_HOME/.pgpass
+echo "*:$NODE_PORT:*:$REPLICATION_USER:$REPLICATION_PASSWORD" >> $PG_HOME/.pgpass
 chmod 0600 $PG_HOME/.pgpass
 chown postgres:postgres $PG_HOME/.pgpass
 
