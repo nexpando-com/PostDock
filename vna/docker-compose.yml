@@ -18,6 +18,7 @@ volumes:
 services:
   pgmaster:
     profiles: ["db1"]
+    restart: always
     build:
       context: ../src
       dockerfile: Postgres-11-Repmgr-4.0.Dockerfile
@@ -27,7 +28,7 @@ services:
       NODE_PORT: $MASTER_PORT
       CLUSTER_NODE_NETWORK_NAME: pgmaster.host # (default: hostname of the node)
       
-      PARTNER_NODES: "pgmaster.host --port $MASTER_PORT,pgslave1.host --port $SLAVE1_PORT,pgslave3.host --port $SLAVE3_PORT"
+      PARTNER_NODES: "pgmaster.host --port=$MASTER_PORT,pgslave1.host --port=$SLAVE1_PORT,pgslave3.host --port=$SLAVE3_PORT"
       REPLICATION_PRIMARY_HOST: pgmaster.host # That should be ignored on the same node
       REPLICATION_PRIMARY_PORT: $MASTER_PORT # That should be ignored on the same node
       
@@ -66,6 +67,7 @@ services:
 #<<< Branch 1
   pgslave1:
     profiles: ["db2"]
+    restart: always
     build:
       context: ../src
       dockerfile: Postgres-11-Repmgr-4.0.Dockerfile
@@ -75,7 +77,7 @@ services:
       NODE_PORT: $SLAVE1_PORT
       CLUSTER_NODE_NETWORK_NAME: pgslave1.host # (default: hostname of the node)
       SSH_ENABLE: 1
-      PARTNER_NODES: "pgmaster.host --port $MASTER_PORT,pgslave1.host --port $SLAVE1_PORT,pgslave3.host --port $SLAVE3_PORT"
+      PARTNER_NODES: "pgmaster.host --port=$MASTER_PORT,pgslave1.host --port=$SLAVE1_PORT,pgslave3.host --port=$SLAVE3_PORT"
       REPLICATION_PRIMARY_HOST: pgmaster.host
       REPLICATION_PRIMARY_PORT: $MASTER_PORT
       CLEAN_OVER_REWIND: 1
@@ -103,6 +105,7 @@ services:
   # Add more slaves if required
   pgslave2:
     profiles: ["db3"]
+    restart: always
     build:
       context: ../src
       dockerfile: Postgres-11-Repmgr-4.0.Dockerfile
@@ -138,6 +141,7 @@ services:
 #<<< Branch 2
   pgslave3:
     profiles: ["db3"]
+    restart: always
     build:
       context: ../src
       dockerfile: Postgres-11-Repmgr-4.0.Dockerfile
@@ -147,7 +151,7 @@ services:
       NODE_PORT: $SLAVE3_PORT
       CLUSTER_NODE_NETWORK_NAME: pgslave3.host # (default: hostname of the node)
       SSH_ENABLE: 1
-      PARTNER_NODES: "pgmaster.host --port $MASTER_PORT,pgslave1.host --port $SLAVE1_PORT,pgslave3.host --port $SLAVE3_PORT"
+      PARTNER_NODES: "pgmaster.host --port=$MASTER_PORT,pgslave1.host --port=$SLAVE1_PORT,pgslave3.host --port=$SLAVE3_PORT"
       REPLICATION_PRIMARY_HOST: pgmaster
       REPLICATION_PRIMARY_PORT: $MASTER_PORT
       NODE_PRIORITY: 200  # (default: 100)
@@ -175,6 +179,7 @@ services:
 
   pgslave4:
     profiles: ["db2"]
+    restart: always
     build:
       context: ../src
       dockerfile: Postgres-11-Repmgr-4.0.Dockerfile
