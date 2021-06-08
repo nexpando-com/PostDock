@@ -34,7 +34,7 @@ services:
       NODE_PRIORITY: 100  # (default: 100)
       SSH_ENABLE: 1
       #database we want to use for application
-      POSTGRES_PASSWORD: $B2B_PASSWORD
+      POSTGRES_PASSWORD: "$B2B_PASSWORD"
       POSTGRES_USER: $B2B_USER
       POSTGRES_DB: $B2B_DATABASE
       CLEAN_OVER_REWIND: 0
