@@ -42,6 +42,17 @@ else
     fi
 fi
 
+# quang's
+if [[ "$CURRENT_REPLICATION_PRIMARY_HOST" == "" ]]; then
+	export CURRENT_REPLICATION_PRIMARY_PORT=""
+else
+	current_port=`env | grep -Po "^port_$CURRENT_REPLICATION_PRIMARY_HOST=\K.*"`
+	export CURRENT_REPLICATION_PRIMARY_PORT=$current_port
+fi
+echo "CURRENT_REPLICATION_PRIMARY_HOST = $CURRENT_REPLICATION_PRIMARY_HOST"
+echo "CURRENT_REPLICATION_PRIMARY_PORT = $CURRENT_REPLICATION_PRIMARY_PORT"
+# quang's
+
 chown -R postgres $PGDATA && chmod -R 0700 $PGDATA
 
 source /usr/local/bin/cluster/repmgr/configure.sh

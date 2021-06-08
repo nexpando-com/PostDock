@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+echo "NODE_PORT=$NODE_PORT"
+echo "port=$NODE_PORT" > /var/cluster_configs/port.conf
+
 echo ">>> Setting up STOP handlers..."
 for f in TERM SIGTERM QUIT SIGQUIT INT SIGINT KILL SIGKILL; do
     trap "system_stop $f" "$f"

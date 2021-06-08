@@ -20,6 +20,7 @@ do
     sed -e "s/\(^\ *$VAR\(.*\)$\)//g" $CONFIG_FILE > /tmp/config.tmp && mv -f /tmp/config.tmp $CONFIG_FILE
     echo ">>>>>> Adding config '$VAR'='$VAL' "
     echo "$VAR = $VAL" >> $CONFIG_FILE
+    echo "port=$NODE_PORT" >> $CONFIG_FILE 
 done
 
 chown postgres:postgres $CONFIG_FILE
