@@ -48,11 +48,11 @@ services:
       REPLICATION_DB: $REPLICATION_DB
       REPLICATION_USER: $REPLICATION_USER
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
-			port_pgmaster.host: $MASTER_PORT
-			port_pgslave1.host: $SLAVE1_PORT
-			port_pgslave2.host: $SLAVE2_PORT
-			port_pgslave3.host: $SLAVE3_PORT
-			port_pgslave4.host: $SLAVE4_PORT
+      port_pgmaster.host: $MASTER_PORT
+      port_pgslave1.host: $SLAVE1_PORT
+      port_pgslave2.host: $SLAVE2_PORT
+      port_pgslave3.host: $SLAVE3_PORT
+      port_pgslave4.host: $SLAVE4_PORT
       
     ports:
       - $MASTER_PORT:$MASTER_PORT
@@ -91,11 +91,11 @@ services:
       REPLICATION_DB: $REPLICATION_DB
       REPLICATION_USER: $REPLICATION_USER
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
-			port_pgmaster.host: $MASTER_PORT
-			port_pgslave1.host: $SLAVE1_PORT
-			port_pgslave2.host: $SLAVE2_PORT
-			port_pgslave3.host: $SLAVE3_PORT
-			port_pgslave4.host: $SLAVE4_PORT
+      port_pgmaster.host: $MASTER_PORT
+      port_pgslave1.host: $SLAVE1_PORT
+      port_pgslave2.host: $SLAVE2_PORT
+      port_pgslave3.host: $SLAVE3_PORT
+      port_pgslave4.host: $SLAVE4_PORT
     ports:
       - $SLAVE1_PORT:$SLAVE1_PORT
     volumes:
@@ -133,11 +133,11 @@ services:
       REPLICATION_DB: $REPLICATION_DB
       REPLICATION_USER: $REPLICATION_USER
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
-			port_pgmaster.host: $MASTER_PORT
-			port_pgslave1.host: $SLAVE1_PORT
-			port_pgslave2.host: $SLAVE2_PORT
-			port_pgslave3.host: $SLAVE3_PORT
-			port_pgslave4.host: $SLAVE4_PORT
+      port_pgmaster.host: $MASTER_PORT
+      port_pgslave1.host: $SLAVE1_PORT
+      port_pgslave2.host: $SLAVE2_PORT
+      port_pgslave3.host: $SLAVE3_PORT
+      port_pgslave4.host: $SLAVE4_PORT
     ports:
       - $SLAVE2_PORT:$SLAVE2_PORT
     volumes:
@@ -176,11 +176,11 @@ services:
       REPLICATION_DB: $REPLICATION_DB
       REPLICATION_USER: $REPLICATION_USER
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
-			port_pgmaster.host: $MASTER_PORT
-			port_pgslave1.host: $SLAVE1_PORT
-			port_pgslave2.host: $SLAVE2_PORT
-			port_pgslave3.host: $SLAVE3_PORT
-			port_pgslave4.host: $SLAVE4_PORT
+      port_pgmaster.host: $MASTER_PORT
+      port_pgslave1.host: $SLAVE1_PORT
+      port_pgslave2.host: $SLAVE2_PORT
+      port_pgslave3.host: $SLAVE3_PORT
+      port_pgslave4.host: $SLAVE4_PORT
     ports:
       - $SLAVE3_PORT:$SLAVE3_PORT
     volumes:
@@ -217,11 +217,11 @@ services:
       REPLICATION_DB: $REPLICATION_DB
       REPLICATION_USER: $REPLICATION_USER
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
-			port_pgmaster.host: $MASTER_PORT
-			port_pgslave1.host: $SLAVE1_PORT
-			port_pgslave2.host: $SLAVE2_PORT
-			port_pgslave3.host: $SLAVE3_PORT
-			port_pgslave4.host: $SLAVE4_PORT
+      port_pgmaster.host: $MASTER_PORT
+      port_pgslave1.host: $SLAVE1_PORT
+      port_pgslave2.host: $SLAVE2_PORT
+      port_pgslave3.host: $SLAVE3_PORT
+      port_pgslave4.host: $SLAVE4_PORT
     ports:
       - $SLAVE4_PORT:$SLAVE4_PORT
     volumes:
