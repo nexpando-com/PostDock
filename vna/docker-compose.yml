@@ -86,7 +86,6 @@ services:
       REPLICATION_PASSWORD: $REPLICATION_PASSWORD
     ports:
       - $SLAVE1_PORT:$SLAVE1_PORT
-
     volumes:
       - pgslave1:/var/lib/postgresql/data
       - ./ssh:/tmp/.ssh/keys
