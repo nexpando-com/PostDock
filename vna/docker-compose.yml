@@ -295,7 +295,7 @@ services:
             # in format variable1:value1[,variable2:value2[,...]] if CONFIGS_DELIMITER_SYMBOL=, and CONFIGS_ASSIGNMENT_SYMBOL=:
             # used for pgpool.conf file
     ports:
-      - 5433:5432
+      - 5432:5432
       - 9898:9898 # PCP
     volumes:
       - ./ssh:/tmp/.ssh/keys
